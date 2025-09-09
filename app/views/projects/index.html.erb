@@ -1,0 +1,13 @@
+<h1>Projects Index</h1>
+<div id="projects-list">
+  <div id="project-header">
+    <a href="#">New Project</a>
+  </div>
+  <% @projects.each do |project| %>
+    <div class="project">
+      <h3 class="project-title"><%= project.title %></h3>
+      <p class="project-description"><%= project.description %></p>
+      <%= link_to "edit", edit_project_path(project) %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<h2><%= @project.title %></h2>
+<% if @project.description %> 
+    <p class="description"><%= @project.description %></p>
+<% end %>
+<div class="actions">
+  <%= link_to "edit", edit_project_path(@project) %>
+</div>
