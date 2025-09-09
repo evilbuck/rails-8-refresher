@@ -2,6 +2,18 @@
 <% if @project.description %> 
     <p class="description"><%= @project.description %></p>
 <% end %>
+<div class="tasks-container">
+  <h3>Tasks</h3>
+  <ul id="tasks">
+    <% @project.tasks.each do |task| %>
+      <li><%= render "tasks/task", task: task %></li>
+    <% end %>
+  </ul>
+  <div class="task-actions actions" id="new_task_form">
+    <%= render "tasks/form", project: @project %>
+  </div>
+</div>
 <div class="actions">
-  <%= link_to "edit", edit_project_path(@project) %>
+  <%= link_to "edit project", edit_project_path(@project) %>
+  <%= button_to "delete project", project_path(@project), method: :delete %>
 </div>

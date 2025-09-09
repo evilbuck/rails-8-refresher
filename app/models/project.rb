@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  has_many :todos
+  has_many :tasks
 
   validates :title, presence: true
 end
