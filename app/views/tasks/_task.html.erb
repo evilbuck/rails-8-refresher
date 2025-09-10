@@ -1,4 +1,4 @@
-<li><%= task.title %>
+<li>
   <%= button_to "delete",
   [task.project, task],
   method: :delete,
@@ -7,4 +7,12 @@
     confirm: "are you sure?",
   },
   class: "delete-task-btn" %>
+  <%= form_with model: task do |f| %>
+    <%= f.checkbox :completed %>
+    <div>
+      <%= f.label :order %>
+      <%= f.number_field :order %>
+    </div>
+  <% end %>
+  <%= task.title %>
 </li>
