@@ -1,1 +1,10 @@
-<li><%= task.title %></li>
+<li><%= task.title %>
+  <%= button_to "delete",
+  [task.project, task],
+  method: :delete,
+  data: {
+    turbo_method: :delete,
+    confirm: "are you sure?",
+  },
+  class: "delete-task-btn" %>
+</li>

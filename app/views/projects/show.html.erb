@@ -1,12 +1,12 @@
 <h2><%= @project.title %></h2>
-<% if @project.description %> 
-    <p class="description"><%= @project.description %></p>
+<% if @project.description %>
+  <p class="description"><%= @project.description %></p>
 <% end %>
 <div class="tasks-container">
   <h3>Tasks</h3>
   <ul id="tasks">
     <% @project.tasks.each do |task| %>
-      <li><%= render "tasks/task", task: task %></li>
+      <%= render "tasks/task", task: task %>
     <% end %>
   </ul>
   <div class="task-actions actions" id="new_task_form">
